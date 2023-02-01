@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 29.536 s <<< FAILURE! - in TestSuite
+AddBookToCart(AutomationTesting.TestCases2)  Time elapsed: 18.124 s  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at AutomationTesting.TestCases2.AddBookToCart(TestCases2.java:17)
+
