@@ -20,6 +20,7 @@ public class MyAccount {
 		this.driver = driver;
 		initElements(driver, this);
 		wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		
 	}
 
 	// WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
@@ -57,15 +58,16 @@ public class MyAccount {
 			Thread.sleep(500);
 			EnterText(regPassword, s);
 		}
-		wait.until(ExpectedConditions.elementToBeClickable(Register));
+		//wait.until(ExpectedConditions.elementToBeClickable(Register));
+		
 		ClickElement(Register);
-
+        
 	}
 
 	public void Login(String username,String password) throws InterruptedException {
 		EnterText(Username, username);
 		EnterText(Password, password);
-		// wait.until(ExpectedConditions.elementToBeClickable(Login))
+	 wait.until(ExpectedConditions.elementToBeClickable(Login));
 		ClickElement(Login);
 	}
 

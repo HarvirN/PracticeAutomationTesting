@@ -11,6 +11,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.interactions.Actions;
+
+
 
 public class Shop {
 	 WebDriver driver;
@@ -51,6 +54,12 @@ WebElement BookAmount;
 @FindBy(xpath="//*[@id=\"page-34\"]/div/div[1]/form/table/tbody/tr[1]/td[4]/span")
 WebElement CartBookAmount;
 
+@FindBy(xpath="//*[@id=\"woocommerce_price_filter-2\"]/form/div/div[1]/span[2]")
+WebElement filerbypriceslider;
+
+@FindBy(xpath="//div[@class='price_slider_amount']//button[@class='button']")
+WebElement filterbypricesubmit;
+
 public void AddBookToCart()
 {   
 	//driver.findElement(By.xpath("//*[@id=\"menu-item-40\"]/a")).click();
@@ -89,6 +98,16 @@ public boolean result()
 	boolean b = c.equals(s);
 	return b;
 }
+
+public void filterByPrice()
+{
+	ShopNavigation.click();
+	Actions action = new Actions(driver);
+	action.dragAndDropBy(filerbypriceslider,0,100).perform();
+	action.dragAndDropBy(filerbypriceslider,-50,0).perform();
+	filterbypricesubmit.click();
+}
+
 }
 
 
